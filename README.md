@@ -1,6 +1,6 @@
 # Aprendendo JavaScript
 
-Conhecimentos e Exercícios durante o curso de JavaScript do [Curso em Vídeo](youtube.com/cursoemvideo).
+Conhecimentos e Exercícios adiquiridos e feitos durante o curso de JavaScript do [Curso em Vídeo](youtube.com/cursoemvideo).
 
 - *JavaScript Básico;*
 - *Variáveis e Tipos Primitivos;*
