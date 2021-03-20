@@ -29,6 +29,7 @@ function adicionar() {
         let item = document.createElement('option')
         item.text = `Valor ${num.value} adicionado`
         lista.appendChild(item)
+        res.innerHTML = ''
     } else {
         window.alert("Valor inválido ou já encontrado na lista")
     }
@@ -37,33 +38,34 @@ function adicionar() {
 }
 
 function finalizar(){
-    for(var valor = 0; valor <= valores.length; valor ++){
-        res.innerHTML += ''
-        res.innerHTML += `Ao todo, temos ${valores.length} numeros cadastrados`
+    if (valores.length == 0){
+        window.alert("Adicione valores antes de finalizar")
+    } else {
+        let tot = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
 
-        var maior = valores[0]
-        var menor = valores[0]
-
-        if(valores[valor] > maior){
-            maior = valores[valor]
+        for(let valor in valores){
+            soma += valores[valor]
+            if (valores[valor] > maior) {
+                maior = valores[valor]
+            }
+            if (valores[menor] < menor){
+                menor = valores[valor]
+            }
         }
-        
-        if(valores[valor] < menor){
-            menor = valores[valor]
-        }
 
-        res.innerHTML += `o maior valor informado foi ${maior}`
-        res.innerHTML += `O menor valor informado foi ${menor}`
-
-        var soma = 0
-        soma += valores[valor]
-
-        res.innerHTML += `Somando os valores, temos ${soma}`
-
-        var media = soma/(valores.length)
-
-        res.innerHTML += `A média dos valores digitados é ${media}`
+        media = soma/tot
 
 
+        res.innerHTML = ""
+        res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados.</p>`
+        res.innerHTML += `<p>O maior valor encontrado foi ${maior}</p>`
+        res.innerHTML += `<p> o menor valor encontrado foi ${menor}</p>`
+        res.innerHTML += `<p>A somatória dos valores foi ${soma}</p>`
+        res.innerHTML += `<p>a média dos valores foi ${media}</p>`
     }
+    
 }
